@@ -1,0 +1,235 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0" />
+
+    <meta name="description"
+          content="Muhammad Hashir - ASP.NET Core MVC Developer Portfolio" />
+
+    <meta name="theme-color"
+          content="#020403" />
+
+    <title>@ViewData["Title"] | Muhammad Hashir</title>
+
+
+    <!-- ==============================
+         BOOTSTRAP
+         ============================== -->
+
+    <link rel="stylesheet"
+          href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+
+    <!-- ==============================
+         GOOGLE FONTS
+         ============================== -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+
+
+    <!-- ==============================
+         BOOTSTRAP ICONS
+         ============================== -->
+
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+
+    <!-- ==============================
+         CUSTOM CSS
+         ============================== -->
+
+    <link rel="stylesheet"
+          href="~/css/site.css"
+          asp-append-version="true" />
+
+    <link rel="stylesheet"
+          href="~/HashirPortfolio.styles.css"
+          asp-append-version="true" />
+
+
+    @await RenderSectionAsync("Styles", required: false)
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================
+         LIVE MATRIX BACKGROUND
+         ===================================== -->
+
+    <canvas id="matrixCanvas"
+            aria-hidden="true">
+    </canvas>
+
+
+    <!-- Dark overlay above Matrix animation -->
+    <div class="matrix-overlay"
+         aria-hidden="true">
+    </div>
+
+
+
+    <!-- =====================================
+         WEBSITE WRAPPER
+         ===================================== -->
+
+    <div class="site-wrapper">
+
+
+        <!-- =================================
+             NAVBAR
+             Custom navbar will come here
+             ================================= -->
+
+        <header id="siteHeader" class="site-header">
+
+            <div class="portfolio-container">
+
+                <nav class="portfolio-navbar">
+
+                    <!-- LOGO -->
+                    <a asp-controller="Home"
+                       asp-action="Index"
+                       class="portfolio-logo"
+                       aria-label="Muhammad Hashir Home">
+
+                        <span>MH</span><span class="logo-symbol">_</span>
+
+                    </a>
+
+
+                    <!-- DESKTOP NAVIGATION -->
+                    <div class="nav-menu" id="navMenu">
+
+                        <a href="#home" class="nav-link-custom active">
+                            Home
+                        </a>
+
+                        <a href="#about" class="nav-link-custom">
+                            About
+                        </a>
+
+                        <a href="#skills" class="nav-link-custom">
+                            Skills
+                        </a>
+
+                        <a href="#projects" class="nav-link-custom">
+                            Projects
+                        </a>
+
+                        <a href="#experience" class="nav-link-custom">
+                            Experience
+                        </a>
+
+                        <a href="#contact" class="nav-link-custom">
+                            Contact
+                        </a>
+
+                    </div>
+
+
+                    <!-- RIGHT SIDE -->
+                    <div class="nav-actions">
+
+               
+                        <!-- CV BUTTON -->
+                        <a href="@Url.Content("~/files/Muhammad-Hashir-CV.pdf")"
+                           class="cv-button"
+                           download="Muhammad-Hashir-CV.pdf"
+                           aria-label="Download Muhammad Hashir CV">
+
+                            <i class="bi bi-download"></i>
+                            <span>Download CV</span>
+
+                        </a>
+
+
+                        <!-- MOBILE MENU BUTTON -->
+                        <button type="button"
+                                class="mobile-menu-btn"
+                                id="mobileMenuBtn"
+                                aria-label="Open navigation"
+                                aria-expanded="false">
+
+                            <span></span>
+                            <span></span>
+                            <span></span>
+
+                        </button>
+
+                    </div>
+
+                </nav>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =================================
+             MAIN WEBSITE CONTENT
+             ================================= -->
+
+        <main role="main">
+
+            @RenderBody()
+
+        </main>
+
+
+
+        <!-- =================================
+             FOOTER
+             Custom footer later
+             ================================= -->
+
+        <footer id="siteFooter">
+
+            @*
+                Final neon-green footer
+                baad mein yahan add karenge.
+            *@
+
+        </footer>
+
+
+    </div>
+
+
+
+    <!-- =====================================
+         JAVASCRIPT
+         ===================================== -->
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="~/js/site.js"
+            asp-append-version="true">
+    </script>
+
+
+    @await RenderSectionAsync("Scripts", required: false)
+
+
+</body>
+
+</html>
